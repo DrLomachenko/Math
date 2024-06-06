@@ -1,0 +1,30 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+
+\begin{document}
+Let $\mathcal{G}$ be a non-finite, compact metric space and $f: \mathcal{G} \to \mathcal{G}$ be a homeomorphism such that the metric of the images is not greater than the metric of the preimages. If there exist $r > 0$ and $x1, x2 \in \mathcal{G}$ such that for any $t \in \mathbb{N}$, $d(f^t(x1), f^t(x2)) \geq r$, then there exists more than one recurrent point.
+
+Proof. Consider the sequences $\{ f^n(x1) \}$ and $\{ f^n(x2) \}$. Since $\mathcal{G}$ is compact, these sequences have convergent subsequences. From the condition on the metric, we get that these sequences do not have a common limit, and hence we can take $a, b \in \mathcal{G}$ such that $a \neq b$ and they are partial limits. Note that $\{ f^n(x1) \}$ and $\{ f^n(x2) \}$ may have the same partial limits, however they do not have the same common limit, and hence there will be at least two subsequences with different limits.
+
+We will prove that $a$ is a recurrent point; the case with $b$ is analogous.
+
+Suppose, on the contrary, that $a$ is not a recurrent point. Then for any $\epsilon > 0$, there exists $t \in \mathbb{N}$ such that $f^t(a) \notin B\epsilon(a)$, where $B\epsilon(a)$ is an $\epsilon$-neighborhood of $a$.
+
+Since $f$ is a homeomorphism, $f^t$ is also a homeomorphism. Therefore, $f^t(B\epsilon(a))$ is an open set in $\mathcal{G}$.
+
+On the other hand, for any $\delta$-neighborhood of $a$, by construction, there exists $x \in B\delta(a)$ such that $f^t(x) \in B\delta(a)$.
+
+Take $\delta = \epsilon/8$. Then there exists $x \in B{\epsilon/8}(a)$ such that $f^t(x) \in B{\epsilon/8}(a)$.
+
+Now consider an $\epsilon/4$-neighborhood of $a$. Since $f^t$ is a homeomorphism, $f^t(B{\epsilon/4}(a))$ is an open set. Moreover, by the condition on the metric, the diameter of $f^t(B{\epsilon/4}(a))$ is not greater than the diameter of $B{\epsilon/4}(a)$, which is $\epsilon/2$.
+
+Since $f^t(x) \in B{\epsilon/8}(a)$, and the diameter, which we define as $\mathrm{diam}(S) = \sup{x, y \in S} d(x, y)$, of $f^t(B{\epsilon/4}(a))$ is not greater than $\epsilon/2$, we get $f^t(B{\epsilon/4}(a)) \subseteq B\epsilon(a)$.
+
+Therefore, $f^t(a) \in B\epsilon(a)$, which contradicts our assumption.
+
+Thus, our assumption that $a$ is not a recurrent point is false, and hence $a$ is a recurrent point.
+
+\end{document}
